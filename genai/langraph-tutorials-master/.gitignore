@@ -1,0 +1,47 @@
+# Claude-specific files (local only)
+CLAUDE.md
+future_advances.md
+.claude/
+
+# Environment & secrets
+.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# SQLite databases (generated during notebook execution)
+*.db
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+01_introduction_to_langgraph.py
+02_conditional_routing.py
+03_tool_integration_openai.py
+04_state_persistence_and_memory.py
+05_human_in_the_loop_streaming.py
+06_parallel_execution_subgraphs.py
+07_production_patterns_advanced_features.py
+08_command_functional_api_longterm_memory.py
+09_multi_agent_systems.py
+10_testing_observability_platform.py
+*.db
+chatbot_*
+support_*
+layouts/*
+graph.png
+__marimo__/*
+layouts/05_hitl_interactive_examples.md
+06_explanations.md
+.langgraph_api/*

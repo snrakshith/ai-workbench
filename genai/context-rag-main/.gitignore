@@ -1,0 +1,85 @@
+# ── Override global gitignore ────────────────────────────────
+# Global ~/.gitignore ignores data/ — re-include sample documents
+!data/
+!data/documents/
+!data/documents/**
+
+# ── Secrets ──────────────────────────────────────────────────
+.env
+
+# ── Python ───────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ── Virtual environments ──────────────────────────────────────
+venv/
+ENV/
+env/
+.venv/
+
+# ── Jupyter ───────────────────────────────────────────────────
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── IDE & editors ─────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Tooling caches ────────────────────────────────────────────
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+.cache/
+*.pyc
+
+# ── Claude Code session data ──────────────────────────────────
+.claude/
+
+# ── Generated / computed artefacts ───────────────────────────
+data/*/vector_db.pkl
+data/*/*.pkl
+data/*/index/
+data/*/indices/
+data/raw/
+data/processed/
+
+# ── Logs & temp ───────────────────────────────────────────────
+*.log
+logs/
+*.tmp
+temp/
+
+# ── Duplicate / scratch files ─────────────────────────────────
+requirements_temp.txt
+context_rag_advanced_part2.ipynb
+context_rag_advanced_part3.ipynb
+
+context_rag_advanced_part2.ipynb
+opencode.json
+prompt_caching.md

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangChain RAG Chatbot</title>
+    <link rel="stylesheet" href="style.css?v=4.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Marked.js for markdown parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+    
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <i class="fas fa-robot"></i>
+                    <h1>LangChain RAG Assistant</h1>
+                </div>
+                <div class="status-section">
+                    <button id="performance-toggle" class="performance-toggle" title="Toggle detailed performance metrics">
+                        <i class="fas fa-stopwatch"></i>
+                        <span class="toggle-text">Performance</span>
+                    </button>
+                    <span id="status-indicator" class="status-indicator offline">
+                        <i class="fas fa-circle"></i>
+                        <span id="status-text">Connecting...</span>
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome message -->
+                <div class="message assistant-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            👋 Hello! I'm your LangChain RAG Assistant. I can help you with questions about LangChain documentation and concepts. What would you like to know?
+                        </div>
+                        <div class="message-time">Just now</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div id="typing-indicator" class="message assistant-message typing-indicator hidden">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    id="user-input" 
+                    placeholder="Ask me anything about LangChain..." 
+                    rows="1"
+                    maxlength="2000"
+                ></textarea>
+                <button id="send-button" class="send-button" disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="input-info">
+                <span id="char-count">0/2000</span>
+                <span class="suggestions">
+                    Try: "What are document loaders?" or "Explain agents in LangChain"
+                </span>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="quick-action" onclick="sendQuickQuery('What are document loaders in LangChain?')">
+                📄 Document Loaders
+            </button>
+            <button class="quick-action" onclick="sendQuickQuery('Explain agents in LangChain in detail')">
+                🤖 LangChain Agents
+            </button>
+            <button class="quick-action" onclick="sendQuickQuery('How do I use vector stores?')">
+                🗄️ Vector Stores
+            </button>
+            <button class="quick-action" onclick="clearChat()">
+                🗑️ Clear Chat
+            </button>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>Processing your question...</p>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="error-toast hidden">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span id="error-message"></span>
+        <button onclick="hideError()" class="close-error">×</button>
+    </div>
+
+    <script src="script.js?v=4.0"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+rag_system_prompt: |
+  You are a LangChain documentation assistant. Your role is to help users understand and use LangChain effectively by providing accurate, helpful, and well-structured answers based on the official LangChain documentation.
+
+  Guidelines for your responses:
+  1. **Accuracy**: Base your answers strictly on the provided context from LangChain documentation
+  2. **Specificity**: Include specific module names, class names, and function signatures when relevant
+  3. **Code Examples**: Provide practical code examples whenever possible
+  4. **Clarity**: Structure your responses clearly with headers, bullet points, or numbered lists
+  5. **Completeness**: Address all parts of the user's question if possible
+  6. **Limitations**: If the provided context doesn't contain sufficient information, clearly state this
+  7. **Citations**: Reference the specific documentation sections or modules you're drawing from
+
+  Context: {context}
+
+  User Question: {question}
+
+  Please provide a comprehensive, accurate, and helpful response based on the context above.
+
+hyde_generation_prompt: |
+  Generate a detailed technical documentation excerpt that would answer this question about LangChain:
+
+  Question: {question}
+
+  Write as if this is official LangChain documentation. Include:
+  - Specific module and class names
+  - Code examples with proper imports
+  - Technical details about parameters and return values
+  - Best practices and common usage patterns
+  - Links to related concepts
+
+  Focus on technical accuracy and use LangChain terminology consistently.
+
+query_expansion_prompt: |
+  Expand the following user query about LangChain to include related terms, synonyms, and relevant technical concepts:
+
+  Original Query: {query}
+
+  Provide an expanded version that includes:
+  - Related technical terms
+  - Alternative phrasings
+  - Relevant LangChain modules/classes
+  - Common use cases
+  - Associated concepts
+
+  Expanded Query:
+
+context_compression_prompt: |
+  Extract the most relevant information from the following context that directly answers the user's question:
+
+  User Question: {question}
+
+  Context: {context}
+
+  Return only the essential information needed to answer the question. Remove redundant or irrelevant details while preserving all key technical information, code examples, and specific references.
+
+evaluation_prompt: |
+  Evaluate the quality of this RAG system response:
+
+  Question: {question}
+  
+  Retrieved Context: {context}
+  
+  Generated Answer: {answer}
+
+  Rate the response on:
+  1. Relevance (1-5): How well does the answer address the question?
+  2. Accuracy (1-5): Is the technical information correct?
+  3. Completeness (1-5): Does it fully answer the question?
+  4. Clarity (1-5): Is the response well-structured and easy to understand?
+  5. Use of Context (1-5): How effectively was the retrieved context used?
+
+  Provide ratings and brief explanations for each criterion.

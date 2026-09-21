@@ -1,0 +1,55 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/books/
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/books/
+Content-Type: application/json
+
+{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "isbn": "9780345339683",
+  "published_year": 1937,
+  "genre": "Fantasy",
+  "available": true
+}
+
+###
+
+GET http://127.0.0.1:8000/books/1
+Accept: application/json
+
+###
+
+PATCH http://127.0.0.1:8000/books/1
+Content-Type: application/json
+
+{
+  "available": false
+}
+
+###
+
+PUT http://127.0.0.1:8000/books/1
+Content-Type: application/json
+
+{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "isbn": "9780345339683",
+  "published_year": 1937,
+  "genre": "Fantasy",
+  "available": true
+}
+
+###
+
+DELETE http://127.0.0.1:8000/books/1

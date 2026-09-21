@@ -1,0 +1,75 @@
+site_name: Neural Networks — Zero to Hero
+site_description: >-
+  Interactive teaching documentation for the Neural Networks: Zero to Hero
+  course — from scalar autograd to a WaveNet-style character-level language
+  model.
+repo_url: https://github.com/karpathy/nn-zero-to-hero
+repo_name: nn-zero-to-hero
+docs_dir: docs-site
+site_dir: site
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: ["."]
+      check_paths: true
+
+nav:
+  - Home: index.md
+  - Modules:
+      - "01 · Micrograd Autograd": module-01-micrograd-autograd.md
+      - "02 · Micrograd MLP": module-02-micrograd-mlp.md
+      - "03 · Makemore Bigrams": module-03-makemore-bigrams.md
+      - "04 · Makemore MLP": module-04-makemore-mlp.md
+      - "05 · Makemore BatchNorm": module-05-makemore-batchnorm.md
+      - "06 · Backprop Ninja": module-06-makemore-backprop-ninja.md
+      - "07 · WaveNet": module-07-makemore-wavenet.md
+  - Reference:
+      - Glossary: glossary.md
+      - Exercise index: exercises.md
+      - Setup guide: setup.md

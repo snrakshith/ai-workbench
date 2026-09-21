@@ -1,0 +1,28 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Local Claude Code settings
+.claude/settings.local.json
+
+# mkdocs build output
+/site/
+
+# FashionMNIST downloads from Track 2 notebooks
+/data/
+notebooks/data/
+
+# Notebook checkpoints and saved model artifacts
+.ipynb_checkpoints/
+*.pth
+*.pt
+
+# Instructor-only teaching notes (never pushed to GitHub)
+/instructor-notes/

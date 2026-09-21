@@ -1,0 +1,83 @@
+site_name: PyTorch Primer
+site_description: A hands-on "PyTorch in ~1-2 hours" teaching kit — tensors, autograd, nn.Module, data loading, training loops, saving/loading, and GPU/multi-GPU training.
+site_url: https://sourangshupal.github.io/pytorch-primer/
+repo_url: https://github.com/sourangshupal/pytorch-primer
+repo_name: sourangshupal/pytorch-primer
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep orange
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+  - tables
+  - footnotes
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Hardware Detection: hardware-detection.md
+  - "Track 1: PyTorch in One Hour":
+      - track1-raschka/01-what-is-pytorch.md
+      - track1-raschka/02-tensors.md
+      - track1-raschka/03-autograd.md
+      - track1-raschka/04-neural-networks.md
+      - track1-raschka/05-data-loaders.md
+      - track1-raschka/06-training-loop.md
+      - track1-raschka/07-saving-loading.md
+      - track1-raschka/08-gpu-training.md
+      - track1-raschka/09-multi-gpu-ddp.md
+  - "Track 2: Official PyTorch Basics":
+      - track2-official/10-quickstart.md
+      - track2-official/11-tensors-deep-dive.md
+      - track2-official/12-datasets-dataloaders.md
+      - track2-official/13-transforms.md
+      - track2-official/14-build-model-deep-dive.md
+      - track2-official/15-autograd-deep-dive.md
+      - track2-official/16-optimization-loop.md
+      - track2-official/17-save-load-predict.md
+  - Multi-GPU DDP Script: ddp-script-walkthrough.md
+  - Teaching Guide: teaching-guide.md

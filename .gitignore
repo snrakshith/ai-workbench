@@ -141,3 +141,9 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+
+# Generated RAG/indexing artifacts
+genai/langchain-rag-project-main/notebooks/data/processed/
+genai/langchain-rag-project-main/notebooks/data/processed2/
+genai/langchain-rag-project-main/notebooks/data/processed3/

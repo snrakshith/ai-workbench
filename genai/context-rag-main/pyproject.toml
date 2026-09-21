@@ -1,0 +1,56 @@
+[project]
+name = "context-rag"
+version = "0.1.0"
+description = "Advanced RAG with Contextual Retrieval - 2026 Edition"
+requires-python = ">=3.12"
+dependencies = [
+    # LLM & Embeddings
+    "anthropic==0.76.0",
+    "voyageai==0.3.7",
+    "openrouter>=0.2.0",
+    # Reranking
+    "cohere==5.20.1",
+    # Transformers & ML
+    "transformers>=4.40.0",
+    "torch>=2.0.0",
+    "sentencepiece>=0.1.99",
+    "accelerate>=0.20.0",
+    # Data & Search
+    "pandas==2.3.3",
+    "numpy==2.4.1",
+    "rank-bm25==0.2.2",
+    "scikit-learn==1.8.0",
+    # Visualisation
+    "matplotlib==3.10.8",
+    # Document loading
+    "pypdf==5.1.0",
+    # Utilities
+    "python-dotenv==1.0.1",
+    "tqdm==4.67.1",
+    "httpx>=0.28.0",
+    "tenacity>=9.0.0",
+    # Jupyter
+    "ipython==8.31.0",
+    "jupyter>=1.1.1",
+    "ipykernel>=7.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.0",
+    "pytest-asyncio>=0.25.0",
+    "ruff>=0.11.0",
+    "mypy>=1.15.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+select = ["E", "W", "F", "I", "B", "UP"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

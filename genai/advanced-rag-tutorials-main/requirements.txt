@@ -1,0 +1,42 @@
+# LangChain ecosystem - Latest versions as of January 2026
+# LangChain 1.2.0 requires Python >=3.10
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langchain-text-splitters
+langchain-cohere
+langchain-aws
+
+# OpenAI SDK - Latest version
+openai
+
+# Vector stores and embeddings
+faiss-cpu
+
+# Document processing
+pymupdf
+pypdf
+
+# Utilities
+python-dotenv
+numpy
+jupyter
+
+# Retrieval methods
+rank-bm25
+
+# Reranking and semantic search
+sentence-transformers
+
+# Evaluation framework
+deepeval
+
+# Data validation
+pydantic
+
+# Optional: For better async support
+aiohttp
+
+# Optional: For progress bars
+tqdm

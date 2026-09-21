@@ -1,0 +1,16 @@
+anthropic==0.76.0
+voyageai==0.3.7
+openrouter>=0.2.0
+transformers>=4.40.0
+torch>=2.0.0
+sentencepiece>=0.1.99
+accelerate>=0.20.0
+pandas==2.3.3
+numpy==2.4.1
+matplotlib==3.10.8
+scikit-learn==1.8.0
+tqdm==4.67.1
+rank-bm25==0.2.2
+pypdf==5.1.0
+python-dotenv==1.0.1
+ipython==8.31.0

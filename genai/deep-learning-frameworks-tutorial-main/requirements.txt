@@ -1,0 +1,28 @@
+# Deep Learning Frameworks Tutorial - Requirements
+# Compatible with Python 3.11+
+
+# Deep Learning Frameworks
+tensorflow
+keras
+torch
+torchvision
+
+# Core Scientific Computing
+numpy
+pandas
+scipy
+
+# Visualization
+matplotlib
+seaborn
+
+# Machine Learning Utilities
+scikit-learn
+
+# Jupyter Environment
+jupyter
+ipykernel
+notebook
+
+# Optional but recommended
+tqdm  # Progress bars

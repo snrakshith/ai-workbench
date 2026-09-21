@@ -1,0 +1,7 @@
+# This project now uses pyproject.toml with uv for package management.
+# See README.md for setup instructions.
+#
+# Quick install:
+#   uv venv --python 3.12
+#   source .venv/bin/activate
+#   uv pip install -e .

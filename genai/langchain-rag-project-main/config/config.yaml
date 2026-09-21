@@ -1,0 +1,57 @@
+app:
+  name: "LangChain RAG System"
+  version: "1.0.0"
+  description: "Educational RAG system for LangChain documentation"
+  
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: true
+  cors_origins: ["http://localhost:3000", "http://localhost:8000"]
+  
+database:
+  collection_name: "langchain_docs"
+  vector_size: 3072
+  distance: "cosine"
+  
+embedding:
+  model: "gemini-embedding-001" 
+  batch_size: 32
+  max_retries: 3
+  retry_delay: 1
+  
+llm:
+  model: "gemini-2.0-flash"
+  max_tokens: 1000
+  temperature: 0.1
+  top_p: 0.9
+  
+chunking:
+  chunk_size: 1200
+  chunk_overlap: 200
+  min_chunk_size: 100
+  max_chunk_size: 1500
+  
+retrieval:
+  top_k: 5
+  similarity_threshold: 0.7
+  rerank_top_k: 20
+  mmr_diversity_score: 0.3
+  
+hyde:
+  enable: true
+  hypothetical_doc_count: 2
+  weight: 0.7
+  
+search:
+  enable_hybrid: true
+  bm25_weight: 0.3
+  semantic_weight: 0.7
+  
+rate_limiting:
+  requests_per_minute: 60
+  requests_per_hour: 1000
+  
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

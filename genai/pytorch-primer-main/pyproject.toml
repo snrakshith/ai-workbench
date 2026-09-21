@@ -1,0 +1,45 @@
+[project]
+name = "pytorch-primer"
+version = "0.1.0"
+description = "PyTorch in ~1-2 Hours - a hands-on teaching primer (tensors, autograd, nn.Module, data loading, training loops, saving/loading, GPU + multi-GPU training)."
+readme = "README.md"
+requires-python = ">=3.12.9,<3.14"
+dependencies = [
+    "torch>=2.13.0",
+    "torchvision>=0.20.0",
+    "numpy>=2.2.6",
+    "matplotlib>=3.10.9",
+    "pandas>=2.2.0",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "nbclient>=0.11.0",
+    "nbformat>=5.10.4",
+]
+
+# torchvision provides the FashionMNIST dataset and the v2 transforms used in
+# notebooks/10-17 (the "official PyTorch Learn the Basics" track). pandas is
+# only needed for the illustrative custom-Dataset-from-CSV example in
+# notebooks/12_official_datasets_and_dataloaders.ipynb.
+
+# Notes on installation (see https://sourangshupal.github.io/pytorch-primer/getting-started/
+# for the full explanation):
+# - `uv sync` installs the latest PyTorch for your platform automatically.
+# - On a machine with an NVIDIA GPU, this pulls in the CUDA-enabled build.
+# - On Apple Silicon (M1/M2/M3/M4+), PyTorch ships with MPS acceleration built in - no extra steps needed.
+# - For a CPU-only install (e.g. instructor laptop with no GPU), visit https://pytorch.org
+#   to get the exact CPU index URL for your OS, then run:
+#   uv add torch --index-url <cpu-index-url-from-pytorch.org>
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5",
+]
+
+[dependency-groups]
+dev = [
+    "nbstripout>=0.9.1",
+]
+
+[tool.setuptools]
+packages = ["utils"]
